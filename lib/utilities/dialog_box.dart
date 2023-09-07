@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:front_row_app/utilities/buttons.dart';
+import 'package:intl/intl.dart';
 
 class DialogBox extends StatelessWidget {
   final TextEditingController dateController;
@@ -36,18 +37,32 @@ class DialogBox extends StatelessWidget {
               ),
             ),
             TextField(
-              controller: dateController,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: "Date",
-              ),
-            ),
-            TextField(
               controller: venueController,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: "Venue",
               ),
+            ),
+            TextField(
+              controller: dateController,
+              decoration: InputDecoration(
+                icon: Icon(Icons.calendar_today_rounded),
+                labelText: "Select Date",
+                border: OutlineInputBorder(),
+                //hintText: "Date",
+              ),
+              onTap: () async {
+                DateTime? pickeddate = await showDatePicker(
+                  context: context, 
+                  initialDate: DateTime.now(),
+                  firstDate: DateTime(2023),
+                  lastDate: DateTime(2100)
+                );
+                if(pickeddate != null) {
+                  String formattedDate = DateFormat('dd.MM.yyyy').format(pickeddate);
+                  dateController.text = formattedDate;
+                }
+              },
             ),
             // save and cancel buttons
             Row(

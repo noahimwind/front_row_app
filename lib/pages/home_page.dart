@@ -33,6 +33,7 @@ class _HomePageState extends State<HomePage> {
       _artistController.clear();
       _venueController.clear();
     });
+    Navigator.of(context).pop();
   }
 
   // create new concert
