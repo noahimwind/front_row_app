@@ -31,10 +31,9 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                Icons.queue_music_outlined,
-                size: 100,
-                color: Colors.indigo,
+              Image(
+                image: AssetImage('assets/front_row_logo.PNG'),
+                width: 150,
               ),
           SizedBox(height: 15),
           // hello again
@@ -112,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                   'Einloggen',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 15
+                    fontSize: 19
                   ),
                 )
               ),

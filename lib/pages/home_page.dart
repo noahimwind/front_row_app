@@ -5,6 +5,7 @@ import 'package:front_row_app/utilities/concerts.dart';
 import 'package:front_row_app/utilities/dialog_box.dart';
 import 'package:front_row_app/pages/profile_page.dart';
 
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -14,6 +15,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   // routing
+
   void toProfilePage(BuildContext context) {
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
@@ -21,6 +23,15 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+  void toLoginPage(BuildContext context) {
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => LoginPage(),
+      ),
+    );
+  }
+
   // text controller
   TextEditingController _artistController = TextEditingController();
   TextEditingController _dateController = TextEditingController();
@@ -65,12 +76,13 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Center(
-          child: Text(
-            'F R O N T  R O W',
+          child: Image(
+            image: AssetImage('assets/front_row_white.png'),
+            height: 45,
           ),
         ),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () => toLoginPage(context),
           icon: Icon(
             Icons.menu,
           )
