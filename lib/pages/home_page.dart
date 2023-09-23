@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_final_fields, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:front_row_app/utilities/concerts.dart';
 import 'package:front_row_app/utilities/dialog_box.dart';
@@ -57,9 +59,28 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.indigo[100],
       appBar: AppBar(
-        title: Text('Concerts'),
+        title: Center(
+          child: Text(
+            'F R O N T  R O W',
+          ),
+        ),
+        leading: IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.menu,
+          )
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.person,
+            )
+          )],
         elevation: 0,
+        backgroundColor: Colors.indigo,
       ),
+      
       floatingActionButton: FloatingActionButton(
         onPressed: createNewConcert,
         child: Icon(Icons.add),
