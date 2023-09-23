@@ -3,11 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:front_row_app/utilities/concerts.dart';
 import 'package:front_row_app/utilities/dialog_box.dart';
-<<<<<<< Updated upstream
-=======
-import 'package:front_row_app/pages/profile_page.dart';
+// import 'package:front_row_app/pages/profile_page.dart';
 import 'package:front_row_app/pages/login_page.dart';
->>>>>>> Stashed changes
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,16 +14,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-<<<<<<< Updated upstream
-=======
   // routing
-  void toProfilePage(BuildContext context) {
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(
-        builder: (context) => ProfilePage(),
-      ),
-    );
-  }
+  // void toProfilePage(BuildContext context) {
+  //   Navigator.of(context).pushReplacement(
+  //     MaterialPageRoute(
+  //       builder: (context) => ProfilePage(),
+  //     ),
+  //   );
+  // }
   void toLoginPage(BuildContext context) {
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
@@ -34,7 +29,7 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
->>>>>>> Stashed changes
+
   // text controller
   TextEditingController _artistController = TextEditingController();
   TextEditingController _dateController = TextEditingController();
@@ -79,8 +74,9 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.indigo[100],
       appBar: AppBar(
         title: Center(
-          child: Text(
-            'F R O N T  R O W',
+          child: Image(
+            image: AssetImage('assets/front_row_white.png'),
+            height: 45,
           ),
         ),
         leading: IconButton(
