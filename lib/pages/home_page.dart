@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:front_row_app/utilities/concerts.dart';
 import 'package:front_row_app/utilities/dialog_box.dart';
 import 'package:front_row_app/pages/profile_page.dart';
+import 'package:front_row_app/pages/login_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,6 +19,13 @@ class _HomePageState extends State<HomePage> {
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
         builder: (context) => ProfilePage(),
+      ),
+    );
+  }
+  void toLoginPage(BuildContext context) {
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => LoginPage(),
       ),
     );
   }
@@ -65,12 +73,13 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Center(
-          child: Text(
-            'F R O N T  R O W',
-          ),
+          child: Image(image: 
+          AssetImage('assets/front_row_white.png'),
+          height: 50,
+        ),
         ),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () => toLoginPage(context),
           icon: Icon(
             Icons.menu,
           )
