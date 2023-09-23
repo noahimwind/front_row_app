@@ -14,12 +14,12 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
 
   void toHomepage(BuildContext context) {
-  Navigator.of(context).pushReplacement(
-    MaterialPageRoute(
-      builder: (context) => HomePage(),
-    ),
-  );
-}
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => HomePage(),
+      ),
+    );
+  }
 
 
   @override
