@@ -16,11 +16,7 @@ class _HomePageState extends State<HomePage> {
   TextEditingController _venueController = TextEditingController();
 
   // list of concerts
-  List concertList = [
-    ["NOV 20", "Ski Aggu", "Köln"],
-    ["DEC 02", "Ritter Lean", "Düsseldorf"],
-    ["DEC 13", "01099", "Frankfurt am Main"],
-  ];
+  List concertList = [];
 
   //save new concert
   void saveNewConcert() {

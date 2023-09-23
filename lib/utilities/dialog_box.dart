@@ -6,8 +6,8 @@ class DialogBox extends StatelessWidget {
   final TextEditingController dateController;
   final TextEditingController artistController;
   final TextEditingController venueController;
-  VoidCallback onSave;
-  VoidCallback onCancel;
+  final VoidCallback onSave;
+  final VoidCallback onCancel;
 
   DialogBox({
     super.key,
