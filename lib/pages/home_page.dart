@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:front_row_app/utilities/concerts.dart';
 import 'package:front_row_app/utilities/dialog_box.dart';
+import 'package:front_row_app/pages/profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,6 +13,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // routing
+  void toProfilePage(BuildContext context) {
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => ProfilePage(),
+      ),
+    );
+  }
   // text controller
   TextEditingController _artistController = TextEditingController();
   TextEditingController _dateController = TextEditingController();
@@ -53,7 +62,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigo[100],
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Center(
           child: Text(
@@ -68,7 +77,7 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () => toProfilePage(context),
             icon: Icon(
               Icons.person,
             )
