@@ -1,5 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:front_row_app/pages/home_page.dart';
+// import 'package:front_row_app/pages/home_page.dart';
 import 'package:front_row_app/pages/login_page.dart';
 
 void main() {

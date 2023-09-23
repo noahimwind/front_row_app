@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:front_row_app/pages/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
@@ -11,6 +12,16 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+  void toHomepage(BuildContext context) {
+  Navigator.of(context).pushReplacement(
+    MaterialPageRoute(
+      builder: (context) => HomePage(),
+    ),
+  );
+}
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +34,7 @@ class _LoginPageState extends State<LoginPage> {
               Icon(
                 Icons.queue_music_outlined,
                 size: 100,
+                color: Colors.indigo,
               ),
           SizedBox(height: 15),
           // hello again
@@ -121,7 +133,33 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               )
             ],
-          )
+          ),
+          SizedBox(height: 20),
+
+          // Gast - vorrübergehend
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: GestureDetector(
+              onTap: () => toHomepage(context),
+              child: Container(
+                padding: EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                  color: Colors.grey,
+                  borderRadius: BorderRadius.circular(12)
+                  ),
+                child: Center(
+                  child: Text(
+                    'Als Gast fortfahren',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15
+                    ),
+                  )
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 20),
           ],),
         )
       ),
